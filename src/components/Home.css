@@ -1,0 +1,247 @@
+/* ── Hero Section ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #eef2f7;
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 5rem;
+}
+
+/* Ambient glow blobs */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.06), transparent 70%);
+  top: -120px;
+  right: 8%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.04), transparent 70%);
+  bottom: -60px;
+  left: 4%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+/* ── Container ── */
+.hero-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Two-column grid ── */
+.hero-content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── Text side ── */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero-greeting {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-name {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  background: none;
+  -webkit-text-fill-color: var(--primary);
+}
+
+.hero-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 1rem;
+  background: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.hero-bio {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #444444;
+  margin: 0.25rem 0 0;
+  max-width: 480px;
+}
+
+.hero-actions {
+  margin-top: 0.75rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.35);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
+}
+
+/* ── Image side ── */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-ring {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  padding: 4px;
+  background: transparent;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.35s ease;
+}
+
+.profile-ring:hover {
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.3),
+    0 28px 72px rgba(0, 0, 0, 0.15),
+    0 0 64px rgba(37, 99, 235, 0.2);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border: 5px solid #eef2f7;
+  transition: transform 0.3s ease;
+}
+
+.profile-ring:hover .profile-img {
+  transform: scale(1.03);
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+  }
+
+  .hero-greeting {
+    justify-content: center;
+  }
+
+  .hero-bio {
+    max-width: 540px;
+  }
+
+  .profile-ring {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 5.5rem 0 3.5rem;
+  }
+
+  .hero-container {
+    padding: 0 1.5rem;
+  }
+
+  .hero-name {
+    font-size: 3.2rem;
+  }
+
+  .hero-title {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .hero-bio {
+    font-size: 0.93rem;
+    line-height: 1.75;
+  }
+
+  .profile-ring {
+    width: 230px;
+    height: 230px;
+  }
+
+  .hero-btn {
+    padding: 0.8rem 1.9rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.App {
+  min-height: 100vh;
+}
+
+/* ── Shared section header ── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  display: block;
+}
+
+.section-heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 3rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+  }
+}
