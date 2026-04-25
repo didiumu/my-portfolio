@@ -3,12 +3,14 @@ import heroImg from '../assets/me.jpg';
 import './Home.css';
 
 const Home = () => {
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/cv.pdf';
-    link.download = 'Mariette_CV.pdf';
-    link.click();
-  };
+const handleDownloadCV = () => {
+  const link = document.createElement('a');
+  link.href = '/cv_umutoni_mariette.pdf';
+  link.download = 'Umutoni_Mariette_CV.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <section id="home" className="hero">
